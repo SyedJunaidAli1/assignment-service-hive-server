@@ -15,11 +15,11 @@ app.use(
 );
 
 import gigRoutes from "./routes/gigRoutes.js";
-
-app.use("/api/gigs", gigRoutes);
-
+import bidRoutes from "./routes/bidRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 
+app.use("/api/gigs", gigRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/bids", bidRoutes);
 
 export default app;
