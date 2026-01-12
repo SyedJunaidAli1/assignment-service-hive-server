@@ -14,4 +14,8 @@ app.use(
   }),
 );
 
+import gigRoutes from "./routes/gigRoutes.js";
+
+app.use("/api/gigs", gigRoutes);
+
 export default app;

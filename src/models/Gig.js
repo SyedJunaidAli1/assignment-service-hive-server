@@ -5,7 +5,7 @@ const gigSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      trim: auto,
+      trim: true,
     },
     description: {
       type: String,
