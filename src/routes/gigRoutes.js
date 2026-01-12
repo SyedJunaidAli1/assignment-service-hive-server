@@ -1,10 +1,9 @@
 import express from "express";
-import { mockAuth } from "../middleware/mockAuth.js";
-import { getGigs, createGig } from "../controller/gigController.js";
+import { getGigs, createGig } from "../controllers/gigController.js";
 
 const router = express.Router();
 
 router.get("/", getGigs);
-router.post("/", mockAuth, createGig);
+router.post("/", createGig);
 
 export default router;
