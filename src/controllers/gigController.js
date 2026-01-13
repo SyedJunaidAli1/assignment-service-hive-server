@@ -39,3 +39,17 @@ export const createGig = async (req, res) => {
     res.status(500).json({ message: "failed to create gig" });
   }
 };
+
+export const getGigById = async (req, res) => {
+  try {
+    const gig = await Gig.findById(req.params.id);
+
+    if (!gig) {
+      return res.status(404).json({ message: "Gig not found" });
+    }
+
+    res.status(200).json(gig);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch gig" });
+  }
+};
