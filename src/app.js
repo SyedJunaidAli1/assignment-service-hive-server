@@ -1,15 +1,18 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
+const FRONTEND_ENDPOINT = process.env.FRONTEND_ENDPOINT;
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: FRONTEND_ENDPOINT,
     credentials: true,
   }),
 );
